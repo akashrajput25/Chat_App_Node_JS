@@ -2,7 +2,7 @@ var socket = io('http://localhost:8000');
 const form = document.getElementById('sendcontainer');
 const messageInput = document.getElementById('messageinp');
 const messageContainer = document.querySelector(".container");
-
+var audio = new Audio('whistle.mp3');
 const name = prompt("Enter your name to join");
 socket.emit('new_user_joined', name);
 
@@ -12,12 +12,17 @@ const append = (message, position) => {
     messageelement.classList.add('message');
     messageelement.classList.add(position);
     messageContainer.append(messageelement);
+    if (position == 'right') {
+        audio.play();
+    }
 }
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const message = messageInput.value;
-    append('You :' + message, 'left');
-    socket.emit('send', message);
+    if (message != null) {
+        append('You :' + message, 'left');
+        socket.emit('send', message);
+    }
     messageInput.value = '';
 });
 socket.on('user_joined', name => {
@@ -25,4 +30,7 @@ socket.on('user_joined', name => {
 });
 socket.on('receive', data => {
     append(`${data.name}:${data.message}`, 'right');
+});
+socket.on('left', name => {
+    append(`${name} left`, 'right');
 });
