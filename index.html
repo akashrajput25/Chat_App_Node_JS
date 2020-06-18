@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width ,initial-scale =1.0">
+    <title>SFC-Messenger</title>
+    <script defer src="js/client.js"></script>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="image">
+        <nav>
+            <img src="chat.png" alt="SFchat">
+        </nav>
+    </div>
+    <div class="container">
+        <div class="message left">Hello bro</div>
+        <div class="message right">Hii</div>
+    </div>
+    <div class="send">
+        <form action="#" id="sendcontainer">
+            <input type="text" id="messageinp" name="Enter your message">
+            <button class="btn" type="submit">Send</button>
+        </form>
+    </div>
+</body>
+
+</html>

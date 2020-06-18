@@ -1,0 +1,16 @@
+{
+    "name": "nodeserver",
+    "version": "1.0.0",
+    "description": "This is node server for my SFC chatting app ",
+    "main": "index.js",
+    "scripts": {
+        "serve": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Akash",
+    "license": "ISC",
+    "dependencies": {
+        "nodemon": "^2.0.4",
+        "socket.io": "^2.3.0"
+    }
+}
