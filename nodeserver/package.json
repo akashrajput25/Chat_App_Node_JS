@@ -10,7 +10,7 @@
     "author": "Akash",
     "license": "ISC",
     "dependencies": {
-        "nodemon": "^2.0.4",
+        "nodemon": "^2.0.20",
         "socket.io": "^2.4.0"
     }
 }
